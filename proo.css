@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        :root {
+            --primary: #6c5ce7;
+            --primary-dark: #5649c0;
+            --secondary: #fd79a8;
+            --accent: #00d2d3;
+            --dark: #1e272e;
+            --light: #f5f6fa;
+            --gray: #808e9b;
+            --success: #00b894;
+            --danger: #d63031;
+            --warning: #fdcb6e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a1a;
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(108, 92, 231, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--light);
+            border: 1px solid var(--gray);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .card {
+            background: rgba(25, 25, 40, 0.5);
+            border-radius: 1rem;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .code-block {
+            background: #1a1a2e;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            position: relative;
+        }
+
+        .code-block::before {
+            content: "code";
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            font-size: 0.7rem;
+            color: var(--gray);
+            text-transform: uppercase;
+        }
+
+        .terminal-window {
+            background: #1a1a2e;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            font-family: 'Fira Code', monospace;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .terminal-header {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .terminal-dot.red { background: #ff5f56; }
+        .terminal-dot.yellow { background: #ffbd2e; }
+        .terminal-dot.green { background: #27ca3f; }
+
+        .typewriter {
+            overflow: hidden;
+            border-right: 0.15em solid var(--accent);
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: 0.1em;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--accent) }
+        }
+
+        .glow {
+            text-shadow: 0 0 10px var(--primary), 0 0 20px var(--accent);
+        }
+
+        .neon-border {
+            position: relative;
+            border-radius: 1rem;
+        }
+
+        .neon-border::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            z-index: -1;
+            border-radius: inherit;
+            opacity: 0.3;
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        .skill-bar {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 0.5rem 0;
+        }
+
+        .skill-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 1.5s ease;
+        }
+
+        .project-card {
+            perspective: 1000px;
+        }
+
+        .project-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .project-card:hover .project-inner {
+            transform: rotateY(180deg);
+        }
+
+        .project-front, .project-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            padding: 2rem;
+            border-radius: 1rem;
+        }
+
+        .project-front {
+            background: rgba(25, 25, 40, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .project-back {
+            background: rgba(108, 92, 231, 0.3);
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .testimonial-card {
+            position: relative;
+            padding: 2rem;
+            border-radius: 1rem;
+            background: rgba(25, 25, 40, 0.5);
+        }
+
+        .testimonial-card::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 20px;
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 20px solid rgba(108, 92, 231, 0.3);
+        }
+
+        .scrolling-text {
+            animation: scroll 20s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            animation: float linear infinite;
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 3rem 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
+        }
